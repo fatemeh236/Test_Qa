@@ -10,7 +10,9 @@ options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.get("https://bimeh.com/")
-driver.find_element('xpath', '//div[@class="d-flex flex-column"]/ul/li/a[@href="/reminder"]').click()
-driver.find_element('xpath', '//*[@id="name"]').send_keys('fati')
+driver.find_element('xpath', '//div[@class="d-flex flex-column"]//a[@href="/reminder" and text()="یادآور بیمه نامه"]').click()
+driver.find_element('xpath', '//input[@id="name"]').send_keys('امین')
 sleep(5)
+
+
 driver.quit()
