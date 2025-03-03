@@ -1,6 +1,7 @@
 from time import sleep
 
 from selenium import webdriver
+from selenium.webdriver import Keys
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service
 import unittest
@@ -38,6 +39,24 @@ class Test_Login_Pinvest(unittest.TestCase):
         self.driver.find_element('xpath', '//input[@placeholder="رمز عبور"]').send_keys('1459762')
         self.driver.find_element('xpath', '//button[@type="submit" and  @class="btn btn-primary mt-20px w-100"]').click()
         self.driver.find_element('xpath', '//div[text()="اطلاعات ورود نامعتبر است."]')
+
+
+
+
+    def test04_no_login(self):
+        codemeli= self.driver.find_element('xpath', '//input[@placeholder="کد ملی"]')
+        codemeli.send_keys(Keys.CONTROL + "a")
+        codemeli.send_keys(Keys.BACKSPACE)
+        codemeli.send_keys('5920039027')
+
+        password = self.driver.find_element('xpath', '//input[@placeholder="رمز عبور"]')
+        password.send_keys(Keys.CONTROL + "a")
+        password.send_keys(Keys.BACKSPACE)
+        password.send_keys('A19223674f*')
+        self.driver.find_element('xpath', '//button[@type="submit" and  @class="btn btn-primary mt-20px w-100"]').click()
+
+
+
 
 
     @classmethod

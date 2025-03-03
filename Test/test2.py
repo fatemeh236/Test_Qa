@@ -10,7 +10,7 @@ options = webdriver.ChromeOptions()
 driver = webdriver.Chrome(service=service, options=options)
 
 driver.get("https://bimeh.com/")
-driver.find_element('xpath', '//a[@href="/thirdparty" and @title="بیمه شخص ثالث"]').click()
+driver.find_element('xpath', '//a[@href="/thirdparty.py" and @title="بیمه شخص ثالث"]').click()
 driver.back()
 driver.find_element('xpath', '//a[@href="/thirdpartyMotor" and @title="بیمه موتور"]').click()
 driver.back()
