@@ -20,16 +20,6 @@ class Test_Login(unittest.TestCase):
         cls.driver.implicitly_wait(5)
         cls.driver.maximize_window()
 
-    # def test01_click(self):
-    #     login = PagesLogin(driver=self.driver)
-    #     login.get_url(url_bimeh)
-    #     sleep(1)
-    #     login.click_element(login_btn_home)
-    #     login.send_keys_element(login_input_phone_number,phone_number)
-    #     login.click_element(login_check_phone_number)
-    #     login.click_element(continue_login_pass )
-    #     login.send_keys_element(password_input,'4655552')
-    #     login.click_element(submit_button)
 
     def test01(self):
         login = PagesLogin(driver=self.driver)
@@ -105,27 +95,6 @@ class Test_Login(unittest.TestCase):
         login.send_keys_element(login_input_password, 'A19223674f')
         login.click_element(submit_button)
         sleep(1)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     @classmethod
     def tearDownClass(cls) -> None:
